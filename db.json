@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "email": "admin@dtidigital.com.br",
+      "password": "$2a$10$AMCMBeWM3Gf4D/7TXap8DOCxPO7vCA4U1tIjH7dSGaKwhql.FiVKC",
+      "id": 1
+    }
+  ]
+}
