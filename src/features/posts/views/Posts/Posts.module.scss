@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    gap: 32px;
+
+    main {
+        flex: 3;
+    }
+
+    aside {
+        flex: 1;
+    }
+}

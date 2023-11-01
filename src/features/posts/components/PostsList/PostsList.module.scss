@@ -1,0 +1,10 @@
+.container {
+    article {
+        border: 1px solid #ccc;
+        padding: 12px;
+
+        &:not(:first-child) {
+            margin: 20px 0 0;
+        }
+    }
+}

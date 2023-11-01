@@ -1,9 +1,24 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "Example 1",
+      "content": "Content for example 1",
+      "id": 1
+    },
+    {
+      "title": "example 2",
+      "content": "example 2 content",
+      "id": 2
+    },
+    {
+      "title": "example 3",
+      "content": "example 3 content",
+      "id": 3
+    },
+    {
+      "title": "example 4",
+      "content": "some content for example 4",
+      "id": 4
     }
   ],
   "comments": [
