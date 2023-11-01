@@ -26,16 +26,12 @@ export interface RestResponse {
     body: any;
 }
 
-type ErrorMiddlewareCallback = (response: RestResponse) => RestResponse;
-
 export class RestApi {
     private readonly baseUrl: string;
     private readonly headers: any;
-    private readonly responseMiddleware?: ErrorMiddlewareCallback;
 
-    constructor(baseUrl: string, headers?: any, responseMiddleware?: ErrorMiddlewareCallback) {
+    constructor(baseUrl: string, headers?: any) {
         this.baseUrl = baseUrl;
-        this.responseMiddleware = responseMiddleware;
         if (headers) this.headers = headers;
     }
 
@@ -75,7 +71,7 @@ export class RestApi {
             body: data,
         };
 
-        return this.responseMiddleware ? this.responseMiddleware(_response) : _response;
+        return _response;
     }
 
     private handleError(error: any): RestResponse {
@@ -92,6 +88,6 @@ export class RestApi {
             _response.errorNetwork = true;
         }
 
-        return this.responseMiddleware ? this.responseMiddleware(_response) : _response;
+        return _response;
     }
 }
