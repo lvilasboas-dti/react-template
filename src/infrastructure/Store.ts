@@ -10,7 +10,7 @@ const reducers = combineReducers({
     admin: persistReducer<ReturnType<typeof adminSlice.getInitialState>>(getPersistConfig(adminSlice.name), adminSlice.reducer),
 });
 
-export const store = configureStore({ reducer: reducers, devTools: true });
+export const store = configureStore({ reducer: reducers, devTools: true, middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }) });
 
 export const makeStore = () => store;
 export const persistor = persistStore(store);
