@@ -3,6 +3,7 @@ import { AdminManager } from '../../Admin.manager';
 import { User } from '../../model/User';
 import { UsersList } from '../../components/UsersList';
 import { AdminHomeReduxProps } from '.';
+import { NewUser } from '../../components/NewUser';
 
 import styles from './AdminHome.module.scss';
 
@@ -28,6 +29,10 @@ export const AdminHome: FC<AdminHomeProps> = ({ clearToken }) => {
         setUsers(result);
     };
 
+    const onUserAdded = (user: User) => {
+        setUsers((prev) => [...prev, user]);
+    };
+
     return (
         <div className={styles['container']}>
             {loading ? (
@@ -35,6 +40,7 @@ export const AdminHome: FC<AdminHomeProps> = ({ clearToken }) => {
             ) : (
                 <>
                     <UsersList users={users} />
+                    <NewUser onUserCreated={onUserAdded} />
                 </>
             )}
         </div>

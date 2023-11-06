@@ -16,4 +16,14 @@ export const AdminService = {
 
         return client.ExecuteRequest(request);
     },
+
+    CreateUser: async (email: string, password: string): Promise<RestResponse> => {
+        const request = new RestRequest({
+            method: HttpMethods.Post,
+            endpoint: `/660/users`,
+            body: { email, password },
+        });
+
+        return client.ExecuteRequest(request);
+    },
 } as const;
