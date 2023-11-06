@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-4. Start the mock API
+4. Start the mock API (on a **new** terminal/console window)
 ```
 npm run api
 ```
